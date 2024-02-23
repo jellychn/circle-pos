@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Header.vue > matches snapshot 1`] = `
+"<div data-v-c970699f="" class="header">
+  <div data-v-c970699f="" class="container">
+    <icon-circle-pos-stub data-v-c970699f="" class="logo"></icon-circle-pos-stub>
+  </div>
+</div>"
+`;

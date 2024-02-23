@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Footer.vue > matches snapshot 1`] = `
+"<div data-v-4896eafd="" class="footer">
+  <p data-v-4896eafd="" class="copyright">© 2024 CirclePOS.com All Rights Reserved.</p>
+</div>"
+`;
