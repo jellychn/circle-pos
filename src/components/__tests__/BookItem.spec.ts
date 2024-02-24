@@ -1,9 +1,10 @@
 import { shallowMount } from '@vue/test-utils'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { useRouter } from 'vue-router'
-import BookItem from '@/components/BookItem.vue'
+import BookItem from '../BookItem.vue'
 
 vi.mock('vue-router')
+// @ts-ignore:next-line
 vi.mocked(useRouter).mockReturnValue({
     push: vi.fn()
   })
@@ -19,7 +20,8 @@ describe('BookComponent', () => {
       title: 'Test Book',
       author: 'Test Author',
       availableStock: 5,
-      price: 10
+      price: 10,
+      isbn: '1234'
     }
     const wrapper = shallowMount(BookItem, {
       props: {
@@ -35,7 +37,8 @@ describe('BookComponent', () => {
       title: 'Test Book',
       author: 'Test Author',
       availableStock: 0,
-      price: 10
+      price: 10,
+      isbn: '1234'
     }
     const wrapper = shallowMount(BookItem, {
       props: {
@@ -52,7 +55,8 @@ describe('BookComponent', () => {
       title: 'Test Book',
       author: 'Test Author',
       availableStock: 5,
-      price: 10
+      price: 10,
+      isbn: '1234'
     }
     const wrapper = shallowMount(BookItem, {
       props: {
@@ -69,7 +73,8 @@ describe('BookComponent', () => {
       title: 'Test Book',
       author: 'Test Author',
       availableStock: 0,
-      price: 10
+      price: 10,
+      isbn: '1234'
     }
     const wrapper = shallowMount(BookItem, {
       props: {

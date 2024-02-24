@@ -4,6 +4,12 @@
   </div>
 </template>
 
+<script lang="ts">
+export default {
+  name: 'AppFooter',
+}
+</script>
+
 <style lang="scss" scoped>
 .footer {
   width: 100%;

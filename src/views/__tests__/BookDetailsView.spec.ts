@@ -1,9 +1,10 @@
+// @ts-nocheck
 import { shallowMount } from '@vue/test-utils'
 import { describe, it, expect, vi } from 'vitest'
 import { useRoute } from 'vue-router'
-import BookDetailsView from '@/views/BookDetailsView.vue'
+import BookDetailsView from '../BookDetailsView.vue'
 
-const id = 123
+const id = '123'
 const bookStoreMock = {
   loading: false,
   processing: false,

@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div v-if="bookStore.loading">
-      <Loader />
+      <AppLoader />
     </div>
     <div v-if="book && !bookStore.loading">
       <div class="book-content">
@@ -36,11 +36,12 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import bookImage from '@/assets/book-placeholder.jpg'
+// @ts-ignore:next-line
+import bookImage from '../assets/book-placeholder.jpg'
 import { useRoute } from 'vue-router'
-import { type Book } from '@/api/getBook'
-import { useBookStore } from '@/stores/books'
-import Loader from '@/components/Loader.vue'
+import { type Book } from '../api/getBook'
+import { useBookStore } from '../stores/books'
+import AppLoader from '../components/AppLoader.vue'
 
 onMounted(async (): Promise<void> => {
   init()
@@ -54,13 +55,13 @@ const route = useRoute()
 const bookStore = useBookStore()
 
 async function init(): Promise<void> {
-  const id = route.params.id
+  const id = route.params.id as string
   await bookStore.getBook(id)
   book.value = bookStore.book
 }
 
 async function purchaseBook(): Promise<void> {
-  const id = route.params.id
+  const id = route.params.id as string
   await bookStore.purchaseBook(id)
   book.value = bookStore.book
   await new Promise(resolve => setTimeout(resolve, 100));

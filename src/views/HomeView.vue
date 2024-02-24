@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div v-if="bookStore.loading">
-      <Loader />
+      <AppLoader />
     </div>
     <div v-if="!bookStore.loading">
       <div v-for="book in books" :key="book.id">
@@ -13,9 +13,11 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { useBookStore } from '@/stores/books'
-import BookItem from '@/components/BookItem.vue'
-import type { Book } from '@/api/getBook'
+import { useBookStore } from '../stores/books'
+// @ts-ignore:next-line
+import BookItem from '../components/BookItem.vue'
+import AppLoader from '../components/AppLoader.vue'
+import type { Book } from '../api/getBook'
 
 const books = ref<Book[]>([])
 const bookStore = useBookStore()

@@ -1,10 +1,10 @@
 import { shallowMount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
-import Footer from '@/components/Footer.vue'
+import AppFooter from '../AppFooter.vue'
 
-describe('Footer.vue', () => {
+describe('AppFooter.vue', () => {
   it('matches snapshot', () => {
-    const wrapper = shallowMount(Footer)
+    const wrapper = shallowMount(AppFooter)
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

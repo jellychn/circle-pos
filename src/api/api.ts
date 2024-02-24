@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:8000';
+// TODO: add to .env and tests
+const baseURL = 'https://circle-frontend-server-dd8f695c0574.herokuapp.com';
 
 const apiService = axios.create({
   baseURL,

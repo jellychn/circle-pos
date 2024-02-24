@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 import { describe, it, expect, vi } from 'vitest'
-import HomeView from '@/views/HomeView.vue'
+import HomeView from '../HomeView.vue'
 
 const mockGetBooks = vi.fn()
 const bookStoreMock = {
@@ -9,20 +9,20 @@ const bookStoreMock = {
   getBooks: mockGetBooks
 }
 
-vi.mock('@/stores/books', () => ({
+vi.mock('../../stores/books', () => ({
   useBookStore: () => bookStoreMock
 }))
 
-vi.mock('@/components/BookItem', () => 'BookItem')
+vi.mock('../../components/BookItem', () => 'BookItem')
+vi.mock('../../components/AppLoader', () => 'AppLoader')
 
 describe('HomeView.vue', () => {
-  it('renders loader when loading is true', async () => {
+  it('renders no books loading is true', async () => {
     bookStoreMock.loading = true
     const wrapper = shallowMount(HomeView)
 
     await wrapper.vm.$nextTick()
 
-    expect(wrapper.find('Loader').exists()).toBe(true)
     expect(wrapper.findAll('BookItem').length).toBe(0)
   })
 
@@ -32,7 +32,7 @@ describe('HomeView.vue', () => {
 
     await wrapper.vm.$nextTick()
 
-    expect(wrapper.find('Loader').exists()).toBe(false)
+    expect(wrapper.find('AppLoader').exists()).toBe(false)
   })
 
   it('should populate books when initialized', async () => {

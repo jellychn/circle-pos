@@ -1,21 +1,22 @@
 import { shallowMount } from '@vue/test-utils'
 import { describe, it, expect, vi } from 'vitest'
 import { useRouter } from 'vue-router'
-import Header from '@/components/Header.vue'
+import AppHeader from '../AppHeader.vue'
 
 vi.mock('vue-router')
+// @ts-ignore:next-line
 vi.mocked(useRouter).mockReturnValue({
   push: vi.fn()
 })
 
-describe('Header.vue', () => {
+describe('AppHeader.vue', () => {
   it('matches snapshot', () => {
-    const wrapper = shallowMount(Header)
+    const wrapper = shallowMount(AppHeader)
     expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('calls navigateToHome when logo is clicked', async () => {
-    const wrapper = shallowMount(Header)
+    const wrapper = shallowMount(AppHeader)
 
     await wrapper.find('.logo').trigger('click')
 

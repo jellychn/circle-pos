@@ -6,6 +6,12 @@
   </div>
 </template>
 
+<script lang="ts">
+export default {
+  name: 'AppHeader',
+}
+</script>
+
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import IconCirclePos from './icons/IconCirclePos.vue'

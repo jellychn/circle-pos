@@ -1,10 +1,10 @@
 import { shallowMount } from '@vue/test-utils'
 import { describe, it, expect } from 'vitest'
-import Loader from '@/components/Loader.vue'
+import AppLoader from '../AppLoader.vue'
 
-describe('Loader.vue', () => {
+describe('AppLoader.vue', () => {
   it('matches snapshot', () => {
-    const wrapper = shallowMount(Loader)
+    const wrapper = shallowMount(AppLoader)
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

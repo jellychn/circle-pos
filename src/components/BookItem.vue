@@ -1,5 +1,3 @@
-
-
 <template>
   <div :class="['book', book.availableStock === 0 ? 'disabled' : 'enabled']">
     <div class="contents" @click="navigateToBook(`/book/${book.id}`)">
@@ -14,8 +12,9 @@
 <script setup lang="ts">
 import { defineProps, toRefs } from 'vue'
 import { useRouter } from 'vue-router'
-import bookImage from '@/assets/book-placeholder.jpg'
-import { type Book } from '@/api/getBook'
+// @ts-ignore:next-line
+import bookImage from '../assets/book-placeholder.jpg'
+import { type Book } from '../api/getBook'
 
 interface BookProps {
   book: Book

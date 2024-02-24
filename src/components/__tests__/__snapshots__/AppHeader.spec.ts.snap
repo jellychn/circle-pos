@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Header.vue > matches snapshot 1`] = `
+exports[`AppHeader.vue > matches snapshot 1`] = `
 "<div data-v-48a13218="" class="header">
   <div data-v-48a13218="" class="container">
     <icon-circle-pos-stub data-v-48a13218="" class="logo"></icon-circle-pos-stub>
